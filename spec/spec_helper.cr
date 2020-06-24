@@ -1,2 +1,2 @@
 require "spec"
-require "../src/ratio_convert"
+require "../src/ratio_value"
