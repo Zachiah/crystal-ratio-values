@@ -1,0 +1,9 @@
+name: ratio_convert
+version: 0.1.0
+
+authors:
+  - Zachiah Sawyer <zachiahsawyer1@gmail.com>
+
+crystal: 0.33.0
+
+license: MIT
