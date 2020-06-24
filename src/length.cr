@@ -1,6 +1,7 @@
 abstract class Length
     include Comparable(Length)
     getter value
+    getter power
 
     def <=>(other)
         if to_cm.value > other.to_cm.value
@@ -14,12 +15,15 @@ abstract class Length
 
     macro inherited
         def +(other)
-            {{@type}}.new(value + other.to_{{@type.name.downcase}}.value)
+            if power != other.power
+                raise ArgumentError.new("Can't add ratio_values of two different powers #{power}, and #{other.power}")
+            end
+            {{@type}}.new(value + other.to_{{@type.name.downcase}}.value, power)
         end
     end
 
     def -
-        self.class.new(-value)
+        self.class.new(-value, power)
     end
 
     def -(other)
@@ -27,14 +31,14 @@ abstract class Length
     end
 
     def *(num)
-        self.class.new(value * num)
+        self.class.new(value * num, power)
     end
 
     def /(num)
-        self.class.new(value / num)
+        self.class.new(value / num, power)
     end
 
-    def initialize(@value : Float64)
+    def initialize(@value : Float64, @power : UInt32 = 1)
     end
 
 

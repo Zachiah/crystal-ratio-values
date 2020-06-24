@@ -15,9 +15,24 @@ describe Length do
         (Mm.new(2) + In.new(4)).class.should eq (Mm)
     end
 
+    it "gives the right power when adding" do
+        (Mm.new(2,3) + In.new(3,3)).power.should eq(3)
+    end
+
+    it "should raise an error when adding two different powers" do
+        # READ DOCS AND WRITE THIS
+        # Cm.new(20) + Cm.new(20,2)
+    end
+
     it "works with unary negative" do
         (-Mm.new(2)).should eq(Mm.new(-2))
     end
+
+
+    it "gives the right power when doing unary negative" do
+        (-Mm.new(2,10)).power.should eq(10)
+    end
+
 
     it "returns accurate type when doing unary negative" do
         (-Mm.new(2)).class.should eq(Mm)
@@ -31,12 +46,25 @@ describe Length do
         (Cm.new(4) - Mm.new(2)).class.should eq(Cm)
     end
 
+    it "gives the right power when subtracting" do
+        (Mm.new(2,3) - In.new(3,3)).power.should eq(3)
+    end
+
+    it "should raise an error when subtracting two different powers" do
+        # READ DOCS AND WRITE THIS
+        # Cm.new(20) - Cm.new(20,2)
+    end
+
     it "multiplies accurately" do
         (Cm.new(4) * 5).should eq(Cm.new(20))
     end
 
     it "gives the right type when multiplying" do
         (Cm.new(4) * 5).class.should eq(Cm)
+    end
+
+    it "gives the right power when multiplying" do
+        (Mm.new(2,3) * 4).power.should eq(3)
     end
 
     it "divides accurately" do
@@ -46,4 +74,10 @@ describe Length do
     it "gives the right type when dividing" do
         (Cm.new(20) / 5).class.should eq(Cm)
     end
+
+    it "gives the right power when dividing" do
+        (Mm.new(2,3) / 4).power.should eq(3)
+    end
+
+
 end
