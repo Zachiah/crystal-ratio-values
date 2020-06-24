@@ -35,7 +35,6 @@ abstract class Length
     end
 
     def initialize(@value : Float64)
-        @value
     end
 
 
