@@ -15,4 +15,8 @@ describe Mm do
         Mm.new(25.4).to_ft.value.should eq(Ft.new(1/12).value)
         Mm.new(12).to_ft.value.round(10).should eq(Ft.new(1/25.4).value.round(10))
     end
+
+    it "converts mm to dm" do
+        Mm.new(10).to_dm.value.should eq(Dm.new(1/10).value)
+    end
 end

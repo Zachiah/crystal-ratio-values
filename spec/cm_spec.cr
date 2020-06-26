@@ -15,4 +15,8 @@ describe Cm do
     Cm.new(2.54).to_mm.value.should eq(Mm.new(25.4).value)
     Cm.new(1).to_mm.value.should eq(Mm.new(25.4/2.54).value)
   end
+
+  it "converts cm to dm" do
+    Cm.new(10).to_dm.value.should eq(Dm.new(1).value)
+  end
 end
