@@ -115,4 +115,9 @@ describe Length do
         (Ft.new(2000,4) / (Cm.new(2000))).class.should eq(Ft)
     end
 
+    it "is accurate when being raised to a power" do
+        (Mm.new(20,4) ** 2).should eq(Mm.new(400,8))
+        (Dm.new(10) ** 2).should eq(Dm.new(100,2))
+    end
+
 end
