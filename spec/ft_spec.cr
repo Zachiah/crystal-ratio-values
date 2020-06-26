@@ -17,6 +17,7 @@ describe Ft do
   end
 
   it "converts ft to dm" do
-    Ft.new(1/12).to_dm.value.should eq(Cm.new(0.254).value)
+    Ft.new(1/12).to_dm.value.should eq(Dm.new(0.254).value)
+    Ft.new(10/12).to_dm.value.should eq(Dm.new(2.54).value)
   end
 end

@@ -18,5 +18,6 @@ describe Cm do
 
   it "converts cm to dm" do
     Cm.new(10).to_dm.value.should eq(Dm.new(1).value)
+    Cm.new(10000).to_dm.value.should eq(Dm.new(1000).value)
   end
 end

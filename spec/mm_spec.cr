@@ -18,5 +18,6 @@ describe Mm do
 
     it "converts mm to dm" do
         Mm.new(10).to_dm.value.should eq(Dm.new(1/10).value)
+        Mm.new(1).to_dm.value.should eq(Dm.new(1/100).value)
     end
 end
