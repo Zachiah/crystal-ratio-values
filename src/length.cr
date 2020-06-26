@@ -4,6 +4,10 @@ abstract class Length
     getter power
 
     def <=>(other)
+        if power != other.power
+            raise ArgumentError.new("Can't compare ratio_values of two different powers #{power}, and #{other.power}")
+        end
+
         if to_cm.value > other.to_cm.value
             1
         elsif to_cm.value < other.to_cm.value
@@ -20,6 +24,14 @@ abstract class Length
             end
             {{@type}}.new(value + other.to_{{@type.name.downcase}}.value, power)
         end
+
+        def *(other : Length)
+            {{@type}}.new(value * other.to_{{@type.name.downcase}}.value, power + other.power)
+        end
+
+        def /(other : Length)
+            {{@type}}.new(value / other.to_{{@type.name.downcase}}.value, power - other.power)
+        end
     end
 
     def -
@@ -33,12 +45,12 @@ abstract class Length
     def *(num)
         self.class.new(value * num, power)
     end
-
+    
     def /(num)
         self.class.new(value / num, power)
     end
 
-    def initialize(@value : Float64, @power : UInt32 = 1)
+    def initialize(@value : Float64, @power : Int32 = 1)
     end
 
 
@@ -47,7 +59,7 @@ abstract class Length
         {% for subtype in @type.subclasses %}
             def to_{{subtype.name.downcase}}
                 final = value * self.class.cm_conv / {{subtype}}.cm_conv
-                {{subtype}}.new(final)
+                {{subtype}}.new(final, power)
             end
         {% end %}
     end

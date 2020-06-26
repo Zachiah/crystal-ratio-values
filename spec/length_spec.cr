@@ -55,29 +55,44 @@ describe Length do
         # Cm.new(20) - Cm.new(20,2)
     end
 
-    it "multiplies accurately" do
+    it "multiplies by scalar accurately" do
         (Cm.new(4) * 5).should eq(Cm.new(20))
     end
 
-    it "gives the right type when multiplying" do
+    it "gives the right type when multiplying by scalar" do
         (Cm.new(4) * 5).class.should eq(Cm)
     end
 
-    it "gives the right power when multiplying" do
+    it "gives the right power when multiplying by scalar" do
         (Mm.new(2,3) * 4).power.should eq(3)
     end
 
-    it "divides accurately" do
+    it "divides by scalar accurately" do
         (Cm.new(20) / 5).should eq(Cm.new(4))
     end
 
-    it "gives the right type when dividing" do
+    it "gives the right type when dividing by scalar" do
         (Cm.new(20) / 5).class.should eq(Cm)
     end
 
-    it "gives the right power when dividing" do
+    it "gives the right power when dividing by scalar" do
         (Mm.new(2,3) / 4).power.should eq(3)
     end
 
+    it "multiplies by another length acurately" do
+        (Mm.new(3) * Mm.new(2)).should eq(Mm.new(6,2))
+    end
+
+    it "gives the right type when multiplying by another length" do
+        (Mm.new(2) * In.new(1000)).class.should eq(Mm)
+    end
+
+    it "divides by another length acurately" do
+        (Mm.new(20,4) / (Mm.new(10,3))).should eq(Mm.new(2,1))
+    end
+
+    it "gives the right type when dividing by another length" do
+        (Mm.new(20,4) / (In.new(1000))).class.should eq(Mm)
+    end
 
 end
