@@ -50,6 +50,10 @@ abstract class Length
         self.class.new(value / num, power)
     end
 
+    def **(num)
+        self.class.new(value ** num, power * num)
+    end
+
     def initialize(@value : Float64, @power : Int32 = 1)
     end
 
