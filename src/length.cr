@@ -88,3 +88,9 @@ class Mm < Length
         1 / 10
     end
 end
+
+class Dm < Length
+    def self.cm_conv
+        10
+    end
+end
