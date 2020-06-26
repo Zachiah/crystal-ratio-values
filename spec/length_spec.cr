@@ -65,32 +65,32 @@ describe Length do
         # Cm.new(20) - Cm.new(20,2)
     end
 
-    it "multiplies by scalar accurately" do
+    it "multiplies by numeric accurately" do
         (Cm.new(4) * 5).should eq(Cm.new(20))
         (In.new(10) * 5).should eq(In.new(50))
     end
 
-    it "gives the right type when multiplying by scalar" do
+    it "gives the right type when multiplying by numeric" do
         (Cm.new(4) * 5).class.should eq(Cm)
         (Ft.new(1000) * 0.2).class.should eq(Ft)
     end
 
-    it "gives the right power when multiplying by scalar" do
+    it "gives the right power when multiplying by numeric" do
         (Mm.new(2,3) * 4).power.should eq(3)
         (Ft.new(2,1234) * 4).power.should eq(1234)
     end
 
-    it "divides by scalar accurately" do
+    it "divides by numeric accurately" do
         (Cm.new(20) / 5).should eq(Cm.new(4))
         (Cm.new(30000) / 30000).should eq(Cm.new(1))
     end
 
-    it "gives the right type when dividing by scalar" do
+    it "gives the right type when dividing by numeric" do
         (Cm.new(20) / 5).class.should eq(Cm)
         (Ft.new(20) /5).class.should eq(Ft)
     end
 
-    it "gives the right power when dividing by scalar" do
+    it "gives the right power when dividing by numeric" do
         (Mm.new(2,3) / 4).power.should eq(3)
         (Ft.new(2,100) / 4).power.should eq(100)
     end
