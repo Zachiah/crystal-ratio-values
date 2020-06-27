@@ -20,4 +20,9 @@ describe Mm do
         Mm.new(10).to_dm.value.should eq(Dm.new(1/10).value)
         Mm.new(1).to_dm.value.should eq(Dm.new(1/100).value)
     end
+
+    it "converts mm to mi" do
+        Mm.new(10*2.54).to_mi.value.should eq(Mi.new(1/(5280*12)))
+        Mm.new(12).to_mi.value.round(10).should eq(Mi.new(1/25.4/5280).value.round(10))
+    end
 end

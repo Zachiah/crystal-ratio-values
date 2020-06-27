@@ -20,4 +20,9 @@ describe Cm do
     Cm.new(10).to_dm.value.should eq(Dm.new(1).value)
     Cm.new(10000).to_dm.value.should eq(Dm.new(1000).value)
   end
+
+  it "converts cm to mi" do
+    Cm.new(2.54).to_mi.value.should eq(Mi.new(1/12/5280).value)
+    Cm.new(1).to_mi.value.should eq(Mi.new(1/(12*2.54*5280)).value)
+  end
 end

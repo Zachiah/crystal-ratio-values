@@ -20,4 +20,9 @@ describe Ft do
     Ft.new(1/12).to_dm.value.should eq(Dm.new(0.254).value)
     Ft.new(10/12).to_dm.value.should eq(Dm.new(2.54).value)
   end
+
+  it "converts ft to mi" do
+    Ft.new(5280).to_mi.value.should eq(Mi.new(1).value)
+    Ft.new(10560).to_mi.value.should eq(Mi.new(1).value)
+  end
 end
