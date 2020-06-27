@@ -69,32 +69,20 @@ abstract class Length
     end
 end
 
-class Cm < Length
-    def self.cm_conv
-        1
+macro new_length(name, cm_conv)
+    class {{name}} < Length
+        def self.cm_conv
+            {{cm_conv}}
+        end
     end
 end
 
-class In < Length
-    def self.cm_conv
-        2.54
-    end
-end
+new_length(Cm, 1)
 
-class Ft < Length
-    def self.cm_conv
-        In.cm_conv * 12
-    end
-end
+new_length(In, 2.54)
 
-class Mm < Length
-    def self.cm_conv
-        1 / 10
-    end
-end
+new_length(Ft, 2.54*12)
 
-class Dm < Length
-    def self.cm_conv
-        10
-    end
-end
+new_length(Mm,1/10)
+
+new_length(Dm,10)
