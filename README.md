@@ -1,9 +1,9 @@
-# ratio_convert
+# ratio_value
 
 Handles ratio values (currently lengths only) in crystal
 
 ```crystal
-require "ratio_convert"
+require "ratio_value"
 
 x = Mi.new(1)
 x.value
@@ -26,8 +26,8 @@ x * y == Mi.new(1, power=2) == Ft.new(5280*5280, power=2)
 
    ```yaml
    dependencies:
-     ratio_convert:
-       github: zachiah/ratio_convert
+     ratio_value:
+       github: zachiah/ratio_value
    ```
 
 2. Run `shards install`
@@ -35,7 +35,7 @@ x * y == Mi.new(1, power=2) == Ft.new(5280*5280, power=2)
 ## Usage
 
 ```crystal
-require "ratio_convert"
+require "ratio_value"
 ```
 
 TODO: Write usage instructions here
@@ -46,7 +46,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/zachiah/ratio_convert/fork>)
+1. Fork it (<https://github.com/zachiah/ratio_value/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
