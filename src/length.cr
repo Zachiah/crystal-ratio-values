@@ -78,13 +78,9 @@ macro new_length(name, cm_conv)
 end
 
 new_length(Cm, 1)
-
 new_length(In, 2.54)
-
 new_length(Ft, 2.54*12)
-
 new_length(Mm,1/10)
-
 new_length(Dm,10)
-
 new_length(Mi, 2.54*12*5280)
+new_length(Yd, 2.54*36)
