@@ -23,6 +23,6 @@ describe Ft do
 
   it "converts ft to mi" do
     Ft.new(5280).to_mi.value.should eq(Mi.new(1).value)
-    Ft.new(10560).to_mi.value.should eq(Mi.new(1).value)
+    Ft.new(10560).to_mi.value.should eq(Mi.new(2).value)
   end
 end

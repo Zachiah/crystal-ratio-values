@@ -54,7 +54,7 @@ abstract class Length
         self.class.new(value ** num, power * num)
     end
 
-    def initialize(@value : Float64, @power : Int32 = 1)
+    def initialize(@value : Int32 | Float64, @power : Int32 = 1)
     end
 
 
@@ -86,3 +86,5 @@ new_length(Ft, 2.54*12)
 new_length(Mm,1/10)
 
 new_length(Dm,10)
+
+new_length(Mi, 2.54*12*5280)

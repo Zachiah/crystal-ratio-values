@@ -22,7 +22,7 @@ describe Mm do
     end
 
     it "converts mm to mi" do
-        Mm.new(10*2.54).to_mi.value.should eq(Mi.new(1/(5280*12)))
+        Mm.new(10*2.54).to_mi.value.should eq(Mi.new(1/(5280*12)).value)
         Mm.new(12).to_mi.value.round(10).should eq(Mi.new(1/25.4/5280).value.round(10))
     end
 end
