@@ -1,5 +1,5 @@
 name: ratio_value
-description: A framework for ration values. It currently supports conversion, addition, subtraction, multiplication by numeric, multiplication by another ratio value, divition by numeric, and divition by another ration value
+description: A framework for ration values. It currently supports conversion, addition, subtraction, multiplication by numeric, multiplication by another ratio value, divition by numeric, divition by another ratio value, and raised to the power of a numeric value
 version: 0.1.0
 
 authors:
